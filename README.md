@@ -11,6 +11,12 @@ var problem = "split this string into words and print them on separate lines"
 
 // Your code
 ```
+var problem = "split this string into words and print them on separate lines"
+var problemSplit = problem.components(separatedBy: " ")
+for split in problemSplit {
+print(split)
+}
+
 
 Example
 
@@ -41,6 +47,10 @@ Given a string `testString` create a new variable called `condensedString` that 
 let testString = "  How   about      thesespaces  ?  "
 //condensedString = " How about thesespaces ? "
 ```
+let testString = "  How   about      thesespaces  ?  "
+var testString2 = testString.replacingOccurrences(of: "   ", with:" ")
+
+print(testString2.replacingOccurrences(of: "  ", with:" "))
 
 
 ## Question 3
@@ -53,6 +63,13 @@ Sample Input: `"Swift is the best language"`
 
 Sample Output: `"language best the is Swift"`
 
+var example = "Swift is the best language"
+var reverso = ""
+var example2 = example.components(separatedBy: " ").reversed()
+for i in example2 {
+print(i)
+}
+
 
 ## Question 4
 
@@ -63,6 +80,17 @@ Example:
 Sample Input: `"danaerys dad cat civic bottle"`
 
 Sample Output: `2`
+
+var sampleInput = "danaerys dad cat civic bottle"
+var reversedSampleInput = sampleInput.components(separatedBy: " ")
+var palindromes = ""
+
+for i in reversedSampleInput{
+if i == String(i.reversed()){
+palindromes += "\(i) "
+}
+}
+palindromes.components(separatedBy: " ").count - 1
 
 
 ## Question 5
@@ -83,6 +111,36 @@ Sample Input: `"PPALLP"`
 
 Sample Output: `true`
 
+let attendanceRecord = "PPALLP"
+
+var late = 0
+var absent = 0
+var present = 0
+for i in attendanceRecord {
+
+if i == "A" {
+absent += 1
+}
+if absent >= 2 {
+print(false)
+break
+}
+if i == "L" {
+late += 1
+}
+if late >= 3 {
+print(false)
+break
+}
+if i == "P" {
+present += 1
+}
+if present >= 1 {
+print(true)
+break
+}
+
+}
 
 ## Question 6
 
